@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <section id="corpo">
+    <div id="campos">
+      <p>Digite sua altura em cm</p>
+      <input type="text" name="altura" id="altura" placeholder="altura">
+      <p>Digite seu peso em Kg</p>
+      <input type="text" name="idade" id="peso" placeholder="peso">
+    </div>
+    <div id="btn2">
+      <a href="#" id='btn' onclick="imc()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Calcular IMC
+      </a>
+    </div>
+    <div id="resultado">
+      <h1 id="nr">22,4</h1>
+    </div>
+    <div>
+      <img id="arrow" src="../images/down-arrow.svg" alt="">
+    </div>
+    <section id="tabela">
+      <h3 id="abx"><18,4</h3>
+      <h3 id="ok">18,5 - 24,9</h3>
+      <h3 id="acm">25 - 29,9</h3>
+      <h3 id="obs">>30</h3>
+    </section>
+    <div id="rcmd">
+      <p id="recom">
+        SOBREPESO
+      </p>
+    </div>
+  </section>
+  <script>
+    function isEmpty(str) {
+        return !str.trim().length;
+      } 
+    function imc() {
+        let altura = document.getElementById('altura').value;
+        let peso = document.getElementById('peso').value
+        let imc = peso/((altura/100)*(altura/100))
+        x = 11*((imc/15) - 1)
+
+
+        if ((isEmpty(altura) == true) || (isEmpty(peso) == true)) {
+          alert('Vázio!')
+        }
+        else {
+          if ((imc >= 18.5) && (imc <= 24.99)) {
+            recom = document.getElementById('recom')
+            tab = document.getElementById('tabela')
+            resultado = document.getElementById('nr')
+            resultado.style.visibility = 'visible'
+            resultado.style.opacity = '0.1'
+            tab.style.visibility = 'visible'
+            resultado.innerHTML = imc.toFixed(2)
+            recom.innerHTML = 'Peso normal'
+            porcentagem = document.getElementById('arrow')
+            porcentagem.style.visibility = 'visible'
+            recom.style.visibility = 'visible'
+            porcentagem.style.transform = 'translateX(-3.5em)'
+            porcentagem.style.filter = 'invert(43%) sepia(18%) saturate(5791%) hue-rotate(88deg) brightness(101%) contrast(91%)'
+            resultado.style.opacity = '1'
+            resultado.style.color = 'rgb(17, 172, 12)'
+            resultado.classList.add("animation")
+            recom.style.color = 'rgb(17, 172, 12)'
+            recom.classList.add("animation")
+            porcentagem.classList.add("animation")
+            tab.classList.add("animation")
+          }
+          else {
+            if ((imc >= 25) && (imc <= 29.9)) {
+              recom = document.getElementById('recom')
+              tab = document.getElementById('tabela')
+              resultado = document.getElementById('nr')
+              resultado.style.visibility = 'visible'
+              resultado.style.opacity = '0.1'
+              tab.style.visibility = 'visible'
+              resultado.innerHTML = imc.toFixed(2)
+              recom.innerHTML = 'Sobrepeso'
+              porcentagem = document.getElementById('arrow')
+              porcentagem.style.visibility = 'visible'
+              recom.style.visibility = 'visible'
+              porcentagem.style.transform = 'translateX(4.5em)'
+              porcentagem.style.filter = 'invert(42%) sepia(78%) saturate(3871%) hue-rotate(339deg) brightness(99%) contrast(88%)'
+              resultado.style.opacity = '1'
+              resultado.style.color = 'rgb(236, 65, 65)'
+              recom.classList.add("animation")
+              recom.style.color = 'rgb(236, 65, 65)'
+              resultado.classList.add("animation")
+              porcentagem.classList.add("animation")
+              tab.classList.add("animation")
+          }
+            else {
+              if (imc <= 18.4) {
+                recom = document.getElementById('recom')
+                tab = document.getElementById('tabela')
+                resultado = document.getElementById('nr')
+                resultado.style.visibility = 'visible'
+                resultado.style.opacity = '0.1'
+                tab.style.visibility = 'visible'
+                resultado.innerHTML = imc.toFixed(2)
+                recom.innerHTML = 'Abaixo do peso'
+                porcentagem = document.getElementById('arrow')
+                porcentagem.style.visibility = 'visible'
+                recom.style.visibility = 'visible'
+                porcentagem.style.transform = 'translateX(-11em)'
+                porcentagem.style.filter = 'invert(80%) sepia(78%) saturate(2632%) hue-rotate(360deg) brightness(96%) contrast(100%)'
+                resultado.style.opacity = '1'
+                resultado.style.color = 'rgb(243, 207, 0)'
+                resultado.classList.add("animation")
+                recom.style.color = 'rgb(243, 207, 0)'
+                recom.classList.add("animation")
+                porcentagem.classList.add("animation")
+                tab.classList.add("animation")
+              }
+              else {
+                  recom = document.getElementById('recom')
+                  tab = document.getElementById('tabela')
+                  resultado = document.getElementById('nr')
+                  resultado.style.visibility = 'visible'
+                  resultado.style.opacity = '0.1'
+                  tab.style.visibility = 'visible'
+                  resultado.innerHTML = imc.toFixed(2)
+                  porcentagem = document.getElementById('arrow')
+                  porcentagem.style.visibility = 'visible'
+                  recom.style.visibility = 'visible'
+                  porcentagem.style.transform = 'translateX(11em)'
+                  porcentagem.style.filter = 'invert(10%) sepia(96%) saturate(3916%) hue-rotate(356deg) brightness(89%) contrast(98%)'
+                  resultado.style.opacity = '1'
+                  resultado.style.color = 'rgb(141, 9, 9)'
+                  resultado.classList.add("animation")
+                  recom.style.color = 'rgb(141, 9, 9)'
+                  recom.classList.add("animation")
+                  porcentagem.classList.add("animation")
+                  tab.classList.add("animation")
+
+                  if (imc <= 34.9) {
+                    recom.innerHTML = 'Obesidade grau 1'
+                  }
+                  else {
+                    if (imc <= 39.9) {
+                      recom.innerHTML = 'Obesidade grau 2'
+                    }
+                    else {
+                      recom.innerHTML = 'Obesidade grau 3'
+                    }
+                  }
+                }
+              }
+            }
+        }
+        return false;
+      }
+  </script>
+  </body>
+</html>
