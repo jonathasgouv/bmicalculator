@@ -7,10 +7,16 @@ BMI is a reliable indicator of body fatness for most people. It is used to scree
 
 BMI does not measure body fat directly, but BMI is moderately correlated with more direct measures of body fat. Furthermore, BMI appears to be as strongly correlated with various metabolic and disease outcome as are these more direct measures of body fatness. [See more](https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html)
 
+<p align="center">
+  <img src="images/bmi.gif">
+</p>
+
 ## Table of Contents
 * [Getting Started](#getting-started)
 * [Installing](#installing)
-
+* [Built With](#built-with)
+* [Author](#author)
+* [License](#license)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
