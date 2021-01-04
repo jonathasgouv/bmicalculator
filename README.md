@@ -23,7 +23,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Installing
 Run the following commands and you will end up with a local running version of the project.
-```
+```bash
 $ git clone https://github.com/jonathasgouv/bmicalculator.git
 $ cd bmicalculator/
 $ npm install
