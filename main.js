@@ -17,22 +17,6 @@ function createWindow () {
 
   // Open the DevTools.
   //win.webContents.openDevTools()
-
-  var menu = Menu.buildFromTemplate([
-      {
-          label: 'Menu',
-          submenu: [
-              {label: 'Ajustar valor de notificação'},
-              {label: 'CoinMarketCap', click() {
-                  shell.openExternal('http://coinmarketcap.com')
-              }},
-              {type: 'separator'},
-              {label: 'Sair', click() {
-                  app.quit()
-              }}
-          ]
-      }
-  ])
   
   //Menu.setApplicationMenu(menu)
 }
